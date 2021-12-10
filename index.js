@@ -9,8 +9,9 @@ let label= document.querySelector(":before")
 input.addEventListener("change",convert);
 
 async function convert(e) {
+
 	if(e.target.files[0]===undefined)return;
-	else if(/\.docx/.test(input.files[0].name)){
+	else if(input.files[0].name.substr(input.files[0].name.length-5)===".docx"){
 		input.setAttribute("disabled","disabled");
 		a.style.display="none";
 		loader.style.display="inline-block";
